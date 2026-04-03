@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SENTINELCHAIN | Radio Set R-04 Asset Sovereignty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e6e2d7",
+                        "surface-container-high": "#ece8dd",
+                        "on-secondary-fixed-variant": "#43474d",
+                        "surface-container-highest": "#e6e2d7",
+                        "surface-container": "#f2eee3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#5a5f65",
+                        "on-tertiary-container": "#ffdfcd",
+                        "tertiary-container": "#a44e00",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#323129",
+                        "on-primary-container": "#c7f0bb",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "surface-tint": "#43673d",
+                        "background": "#fdf9ee",
+                        "surface-container-low": "#f7f3e8",
+                        "on-secondary-container": "#5f636a",
+                        "on-tertiary-fixed": "#311300",
+                        "surface": "#fdf9ee",
+                        "on-primary-fixed-variant": "#2c4f27",
+                        "on-tertiary-fixed-variant": "#743500",
+                        "inverse-on-surface": "#f4f0e6",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fdf9ee",
+                        "primary-fixed-dim": "#a9d19e",
+                        "outline": "#73796f",
+                        "inverse-primary": "#a9d19e",
+                        "primary-container": "#4b6f44",
+                        "on-surface": "#1c1c15",
+                        "on-secondary-fixed": "#181c22",
+                        "tertiary-fixed": "#ffdbc8",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#dce0e8",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c2c8bc",
+                        "tertiary": "#7f3b00",
+                        "primary-fixed": "#c4eeb8",
+                        "surface-dim": "#dddacf",
+                        "on-background": "#1c1c15",
+                        "secondary-fixed-dim": "#c3c6ce",
+                        "secondary-fixed": "#dfe2ea",
+                        "primary": "#34562e",
+                        "on-surface-variant": "#42483f",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#012202"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .radar-grid {
+            background-image: radial-gradient(circle, #34562e 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9ee] dark:bg-[#1c1c15] border-b-4 border-[#f2eee3] dark:border-[#2a2a22] flex justify-between items-center px-8 h-16 w-full max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#34562e] dark:text-[#4b6f44] tracking-tighter uppercase font-headline">SENTINELCHAIN</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-bold tracking-tight text-[#5a5f65] dark:text-[#a0a5ac] hover:text-[#34562e] uppercase text-sm" href="#">Dashboard</a>
+<a class="font-headline font-bold tracking-tight text-[#5a5f65] dark:text-[#a0a5ac] hover:text-[#34562e] uppercase text-sm" href="#">Tactical Map</a>
+<a class="font-headline font-bold tracking-tight text-[#5a5f65] dark:text-[#a0a5ac] hover:text-[#34562e] uppercase text-sm" href="#">Audit Chain</a>
+<a class="font-headline font-bold tracking-tight text-[#34562e] dark:text-[#4b6f44] border-b-4 border-[#34562e] dark:border-[#4b6f44] pb-1 uppercase text-sm" href="#">Inventory</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#f2eee3]/50 dark:hover:bg-[#282821]/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-[#34562e]">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#f2eee3]/50 dark:hover:bg-[#282821]/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-[#34562e]">settings</span>
+</button>
+<img alt="User Profile" class="w-10 h-10 rounded shadow-inner object-cover border-2 border-primary" data-alt="Close-up portrait of a commanding military officer with a serious expression and weathered features, natural daylight, professional photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEVD820mQPz6C0L9qNoOwVwjQ0m7KowTk614WbNie2oTXeHWpxI8t1URxHIW52ypLOgOwwdgbR_EUwbLne2D1nBMxxPSmg--umwdXMfltK45QmwlclOyY9Yx7qeU0CsGzxqsMVBPFHJy-_VVTe8qQIns6DXnE2zfyVA5Jkxx69TyqUt4zm61Kdgy58P5019v6rvHrFhilwkk4-7juASfnnlJWejtz3uybYzlZfyCrVJRw6PQRRZZOoe2rQ-HHMpQ9qeYBr_XioQYkk"/>
+</div>
+</nav>
+<!-- Sidebar Navigation (Updated to Global SideNavBar Style) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f2eee3] dark:bg-[#1c1c15] border-r-4 border-[#e5e1d5] dark:border-[#2c2c24] flex flex-col pt-20 z-40">
+<div class="px-6 py-6 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white">shield</span>
+</div>
+<div>
+<h3 class="text-primary font-black text-xl tracking-tighter uppercase leading-none font-headline">Unit 01</h3>
+<p class="text-[10px] text-secondary font-medium tracking-widest uppercase">Sector 7G</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-6 py-3 font-headline text-xs font-medium tracking-widest uppercase transition-all duration-200 text-[#5a5f65] hover:bg-[#e5e1d5] border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Command Deck
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-headline text-xs font-medium tracking-widest uppercase transition-all duration-200 text-[#5a5f65] hover:bg-[#e5e1d5] border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">map</span>
+                Tactical Map
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-headline text-xs font-medium tracking-widest uppercase transition-all duration-200 text-[#5a5f65] hover:bg-[#e5e1d5] border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                Audit Chain
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-headline text-xs font-medium tracking-widest uppercase transition-all duration-200 text-[#5a5f65] hover:bg-[#e5e1d5] border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+                Anomaly HUD
+            </a>
+</nav>
+<div class="px-6 py-6 space-y-6">
+<button class="w-full py-4 bg-primary text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-primary-container transition-colors shadow-sm">
+                DEPLOY COMMAND
+            </button>
+<div class="space-y-1 pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-4 px-2 py-2 font-headline text-[10px] font-bold uppercase tracking-tighter text-[#5a5f65] hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-sm">shield</span> Security
+                </a>
+<a class="flex items-center gap-4 px-2 py-2 font-headline text-[10px] font-bold uppercase tracking-tighter text-[#5a5f65] hover:opacity-100" href="#">
+<span class="material-symbols-outlined text-sm">terminal</span> Logs
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 pb-24 min-h-screen">
+<div class="max-w-7xl mx-auto px-8 py-8">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-8">
+<div>
+<nav class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase mb-2 flex items-center gap-2">
+<span>Inventory</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Communications</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Asset Sovereignty</span>
+</nav>
+<h1 class="text-5xl font-black font-headline text-primary tracking-tighter uppercase leading-none">RADIO SET R-04</h1>
+<div class="flex items-center gap-4 mt-3">
+<span class="text-lg font-bold text-secondary font-headline">SN: R04-9928-TX-ALPHA</span>
+<span class="px-3 py-1 bg-tertiary text-on-tertiary text-[10px] font-bold tracking-widest uppercase rounded flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-white opacity-50"></span>
+                            CHECKED-OUT
+                        </span>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Health Index</div>
+<div class="text-3xl font-black font-headline text-primary">89.4%</div>
+</div>
+</header>
+<!-- Asymmetric Bento Grid -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left Column: Command & Telemetry -->
+<div class="col-span-12 lg:col-span-7 space-y-8">
+<!-- System Integrity Radar (The Visual Anchor) -->
+<section class="bg-surface-container-low p-8 rounded shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-1">Diagnostics</h4>
+<h3 class="text-xl font-bold text-primary font-headline uppercase">System Integrity Radar</h3>
+</div>
+<span class="material-symbols-outlined text-primary/40 text-4xl">radar</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="relative w-48 h-48 mx-auto flex items-center justify-center border-4 border-primary/10 rounded-full radar-grid">
+<div class="absolute inset-2 border-2 border-primary/20 rounded-full"></div>
+<div class="absolute inset-8 border border-primary/20 rounded-full"></div>
+<div class="w-full h-px bg-primary/20 absolute"></div>
+<div class="w-px h-full bg-primary/20 absolute"></div>
+<div class="absolute w-2 h-2 bg-primary rounded-full blur-[2px]"></div>
+<!-- Telemetry Points -->
+<div class="absolute top-1/4 left-1/4 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
+<div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
+<span class="material-symbols-outlined text-primary text-5xl opacity-80" data-weight="fill">sensors</span>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<div class="text-xs font-bold text-secondary uppercase tracking-widest">Battery Level</div>
+<div class="text-xl font-bold text-primary">88%</div>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<div class="text-xs font-bold text-secondary uppercase tracking-widest">Signal Strength</div>
+<div class="text-xl font-bold text-primary">92%</div>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<div class="text-xs font-bold text-secondary uppercase tracking-widest">Mechanical Wear</div>
+<div class="text-xl font-bold text-primary">72/100</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Custody & Location -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-high p-8 rounded space-y-6">
+<h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em]">Custody Chain</h4>
+<div>
+<div class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">Current Custodian</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary text-xs">LM</div>
+<div class="text-lg font-bold text-primary uppercase font-headline">LT. MEHTA</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">Location</div>
+<div class="text-sm font-bold text-primary uppercase">ZONE ALPHA</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant font-bold uppercase mb-1">Active Duration</div>
+<div class="text-sm font-bold text-primary uppercase">3H 22M AGO</div>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded bg-surface-container-high">
+<div class="absolute top-4 left-4 z-10 bg-primary/90 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest">Tactical Overlay: Alpha</div>
+<div class="w-full h-full min-h-[200px] bg-slate-200">
+<img alt="Zone Alpha Tactical Map" class="w-full h-full object-cover grayscale opacity-80" data-alt="Satellite imagery of a rugged forested mountain terrain with tactical grid overlays and topographic contours, muted earthy colors" data-location="Northern Forest Region" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJg3B1UaQpzmxb5ql2ok1a7UsXXmW9cxAxH7-P5qZIFQHS-NJC2BaQQ6um5NugSz5rGDbWceLBgxuRrLeVfUK0g4ykfWAiOO92MXwefffXCoSpJikCJ-uPq0idcQBfqIi-Kkd6_doOed2QkQfP6BYhBVrPMVtXjfypatoPk7zu3troxG_ujG2f02g5IO1XTE6NDzu-5NgN9B7DttdeJLOo7KkZVY_v0w_th2mhyNqlI8DPr4s-Ig6u15KQFV0QArZFczQZpniUnYof"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Lifecycle & Details -->
+<aside class="col-span-12 lg:col-span-5">
+<section class="bg-surface-container-highest p-8 rounded shadow-none">
+<h3 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-8">Lifecycle Timeline</h3>
+<div class="relative pl-6 border-l-2 border-primary/20 space-y-10">
+<!-- Event 1 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-surface-container-highest"></span>
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-sm font-bold text-primary uppercase">Serviced</h5>
+<span class="text-[10px] font-bold text-secondary uppercase">2023.10.12</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">System frequency recalibration and firmware patch v2.9 applied by SIG-TECH team.</p>
+</div>
+<!-- Event 2 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary/40 border-4 border-surface-container-highest"></span>
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-sm font-bold text-primary uppercase">Transferred</h5>
+<span class="text-[10px] font-bold text-secondary uppercase">2023.08.05</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Released from Forward Base Bravo into Lt. Mehta's personal custody for Operation Sigma.</p>
+</div>
+<!-- Event 3 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary/40 border-4 border-surface-container-highest"></span>
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-sm font-bold text-primary uppercase">Initial Deployment</h5>
+<span class="text-[10px] font-bold text-secondary uppercase">2023.01.20</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Entered active duty status in high-density terrain environment.</p>
+</div>
+<!-- Event 4 -->
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-primary/20 border-4 border-surface-container-highest"></span>
+<div class="flex justify-between items-start mb-1">
+<h5 class="text-sm font-bold text-primary uppercase">Asset Procured</h5>
+<span class="text-[10px] font-bold text-secondary uppercase">2022.11.15</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Original inventory logging and encryption keys initialization.</p>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t-2 border-primary/5">
+<h4 class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-6">Technical Documentation</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark border border-primary/10 rounded-lg hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl">description</span>
+</div>
+<div>
+<div class="text-sm font-bold text-primary uppercase font-headline tracking-tight">OPERATING_MANUAL_V4.PDF</div>
+<div class="text-[10px] text-secondary font-medium uppercase tracking-widest">Technical Specs • 12.4 MB</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 transition-opacity">download</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark border border-primary/10 rounded-lg hover:border-primary/30 transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+</div>
+<div>
+<div class="text-sm font-bold text-primary uppercase font-headline tracking-tight">CERT_OF_ACCOUNTABILITY.PDF</div>
+<div class="text-[10px] text-secondary font-medium uppercase tracking-widest">Compliance • 2.1 MB</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 transition-opacity">download</span>
+</div>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Transactional Context) -->
+<footer class="fixed bottom-0 w-full bg-surface-container-highest border-t-2 border-primary/10 px-8 h-20 flex justify-between items-center z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">warning</span>
+<div class="text-[10px] font-bold text-secondary uppercase tracking-wider">
+                Asset locked to <span class="text-on-surface">Sig-Alpha Network</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-8 h-10 border-2 border-secondary/20 text-secondary font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary/5 transition-colors">
+                Flag Issue
+            </button>
+<button class="px-8 h-10 border-2 border-primary text-primary font-bold text-xs uppercase tracking-widest rounded hover:bg-primary/5 transition-colors">
+                Transfer
+            </button>
+<button class="px-10 h-10 bg-primary text-on-primary font-bold text-xs uppercase tracking-widest rounded shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                Check-In
+            </button>
+</div>
+</footer>
+</body></html>

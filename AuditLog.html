@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Chain | SENTINELCHAIN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;family=Public+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#73796f",
+                    "on-primary-container": "#c7f0bb",
+                    "surface-container-highest": "#e6e2d7",
+                    "on-surface": "#1c1c15",
+                    "inverse-primary": "#a9d19e",
+                    "surface-container": "#f2eee3",
+                    "surface-container-high": "#ece8dd",
+                    "primary-container": "#4b6f44",
+                    "on-background": "#1c1c15",
+                    "on-tertiary-fixed": "#311300",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#43673d",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f7f3e8",
+                    "inverse-surface": "#323129",
+                    "on-secondary-container": "#5f636a",
+                    "secondary": "#5a5f65",
+                    "surface-variant": "#e6e2d7",
+                    "on-tertiary-container": "#ffdfcd",
+                    "background": "#fdf9ee",
+                    "secondary-fixed": "#dfe2ea",
+                    "on-primary-fixed-variant": "#2c4f27",
+                    "on-secondary-fixed": "#181c22",
+                    "surface-bright": "#fdf9ee",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#42483f",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c3c6ce",
+                    "on-secondary-fixed-variant": "#43474d",
+                    "inverse-on-surface": "#f4f0e6",
+                    "primary-fixed-dim": "#a9d19e",
+                    "on-tertiary-fixed-variant": "#743500",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#34562e",
+                    "tertiary": "#7f3b00",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb689",
+                    "secondary-container": "#dce0e8",
+                    "on-primary-fixed": "#012202",
+                    "surface-dim": "#dddacf",
+                    "surface": "#fdf9ee",
+                    "outline-variant": "#c2c8bc",
+                    "tertiary-container": "#a44e00",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#c4eeb8",
+                    "tertiary-fixed": "#ffdbc8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Work Sans"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Work Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fdf9ee] dark:bg-[#1c1c15] docked full-width top-0 border-b-2 border-b-[#f2eee3] dark:border-b-[#2c2c24] sticky z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-[#34562e] dark:text-[#8da886]">SENTINELCHAIN</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Command Deck</a>
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Tactical Map</a>
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#34562e] border-b-4 border-[#34562e] pb-1" href="#">Audit Chain</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#4b6f44] font-bold text-sm px-3 py-1 bg-on-primary-container/20 rounded">98% System Health</span>
+<span class="material-symbols-outlined text-[#5a5f65] cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#5a5f65] cursor-pointer" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Commander Profile" data-alt="Close-up portrait of a military commander in field gear with serious expression, high-end photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xhA3-5u8owgnihqW9V-tTc3SywhxH99IdfEK0HOLJRlUTaSpn1hxIPoyusFfRcodfRjNeIdlrxSM9VhwbjjSsa1Q1xclta1fJ3evq6-cUa8lKoD59flW2xqQ6Zy2J0wiAdRNiJ3C4pNEcAZ1IEckBbpsCes89m9fE0tlc-9s__jLGR0mkGlLROEnPS9TkiN3cxQv63SaK6eY_wM0wOUh3eHfRWAEJbLl2cR2pfjQfQAb933KLctsZXZAgWl0Of3dcM6C9PpK8zbX"/>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 border-r-4 bg-[#f2eee3] dark:bg-[#1c1c15] border-r-[#e5e1d5] dark:border-r-[#2c2c24] z-40 pt-20">
+<div class="px-6 py-8 flex items-center gap-4">
+<div class="w-10 h-10 bg-primary rounded-md flex items-center justify-center text-on-primary font-black">01</div>
+<div>
+<h3 class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs text-[#4b6f44]">Unit 01</h3>
+<p class="text-[10px] text-secondary">Sector 7G</p>
+</div>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-3 font-['Work_Sans'] font-medium uppercase tracking-widest text-xs text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Command Deck
+                </a>
+<a class="flex items-center gap-3 font-['Work_Sans'] font-medium uppercase tracking-widest text-xs text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                    Tactical Map
+                </a>
+<a class="flex items-center gap-3 font-['Work_Sans'] font-bold uppercase tracking-widest text-xs bg-[#4b6f44] text-white px-4 py-3 border-l-4 border-[#34562e]" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                    Audit Chain
+                </a>
+<a class="flex items-center gap-3 font-['Work_Sans'] font-medium uppercase tracking-widest text-xs text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+                    Anomaly HUD
+                </a>
+</nav>
+<div class="p-4 border-t border-outline-variant/30">
+<button class="w-full bg-primary text-on-primary py-3 rounded font-bold text-xs tracking-widest uppercase">DEPLOY COMMAND</button>
+</div>
+<div class="mt-auto p-4 flex flex-col gap-2">
+<div class="flex items-center gap-3 px-4 py-2 text-[#5a5f65] text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-[#e5e1d5]">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span> Security
+                </div>
+<div class="flex items-center gap-3 px-4 py-2 text-[#5a5f65] text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-[#e5e1d5]">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span> Logs
+                </div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 p-8 bg-background">
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-xs font-black uppercase tracking-widest text-secondary mb-2 block">System Ledger</span>
+<h1 class="text-4xl font-black text-primary tracking-tighter uppercase">Audit Chain</h1>
+<p class="text-secondary mt-2 max-w-xl">Immutable transaction log for all field assets. Chain integrity is verified every 60 seconds against distributed neural consensus.</p>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="flex items-center gap-2 bg-[#f2eee3] px-4 py-2 rounded-lg border-l-4 border-[#2F7A4D]">
+<span class="material-symbols-outlined text-[#2F7A4D]" data-icon="verified_user">verified_user</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Integrity Status</p>
+<p class="text-sm font-bold text-[#2F7A4D]">CHAIN SECURED</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-high text-primary font-bold text-xs uppercase tracking-wider rounded hover:bg-surface-variant transition-colors border border-outline-variant/20">Verify Chain Integrity</button>
+<button class="px-4 py-2 bg-tertiary text-on-tertiary font-bold text-xs uppercase tracking-wider rounded hover:bg-tertiary-container transition-colors shadow-sm">Simulate Tamper Attack</button>
+</div>
+</div>
+</header>
+<!-- Audit Chain Bento Grid / Flow -->
+<div class="flex flex-col gap-8 relative">
+<!-- Vertical Line Connector -->
+<div class="absolute left-6 top-8 bottom-0 w-1 bg-outline-variant/20 hidden md:block"></div>
+<!-- Block 04: Latest -->
+<div class="relative pl-0 md:pl-16">
+<!-- Connector Node -->
+<div class="absolute left-[20px] top-6 w-3 h-3 bg-primary rounded-full hidden md:block border-4 border-background ring-4 ring-primary/20"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+<div class="w-1 bg-[#2F7A4D]"></div>
+<div class="p-6 flex-1 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-1">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Asset Identity</span>
+<p class="font-bold text-primary text-lg">XM-842 RIFLE</p>
+<p class="text-xs text-secondary font-mono mt-1">ID: SN-7729-DELTA</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Action</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="assignment_return">assignment_return</span>
+<span>RETURNED</span>
+</div>
+<p class="text-xs text-secondary mt-1">14:02:44 UTC</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Authorized User</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">S.K</div>
+<span class="text-sm font-bold">SGT. KOVALSKY</span>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Current Hash (SHA-256)</span>
+<p class="text-[10px] font-mono break-all leading-tight text-primary">8f3b2a91c7e4d5f0b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Block 03 -->
+<div class="relative pl-0 md:pl-16">
+<div class="absolute left-[20px] top-6 w-3 h-3 bg-secondary rounded-full hidden md:block border-4 border-background"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+<div class="w-1 bg-[#2F7A4D]"></div>
+<div class="p-6 flex-1 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-1">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Asset Identity</span>
+<p class="font-bold text-primary text-lg">MQ-9 REAPER</p>
+<p class="text-xs text-secondary font-mono mt-1">ID: DR-990-SEC</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Action</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="ios_share">ios_share</span>
+<span>CHECK-OUT</span>
+</div>
+<p class="text-xs text-secondary mt-1">11:15:20 UTC</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Authorized User</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">C.M</div>
+<span class="text-sm font-bold">CPT. MILLER</span>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Current Hash (SHA-256)</span>
+<p class="text-[10px] font-mono break-all leading-tight text-primary">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Block 02: Broken Visual (Simulated) -->
+<div class="relative pl-0 md:pl-16 group">
+<div class="absolute left-[20px] top-6 w-3 h-3 bg-secondary rounded-full hidden md:block border-4 border-background"></div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row opacity-60 grayscale-[0.5]">
+<div class="w-1 bg-[#2F7A4D]"></div>
+<div class="p-6 flex-1 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-1">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Asset Identity</span>
+<p class="font-bold text-primary text-lg">THERMAL OPTIC</p>
+<p class="text-xs text-secondary font-mono mt-1">ID: OP-4412-TH</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Action</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="inventory">inventory</span>
+<span>AUDIT PASS</span>
+</div>
+<p class="text-xs text-secondary mt-1">09:30:11 UTC</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Authorized User</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container-highest flex items-center justify-center text-[10px] font-bold">SYS</div>
+<span class="text-sm font-bold">AUTO-SCANNER</span>
+</div>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Current Hash (SHA-256)</span>
+<p class="text-[10px] font-mono break-all leading-tight text-primary">5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Block 01: Genesis -->
+<div class="relative pl-0 md:pl-16">
+<div class="absolute left-[20px] top-6 w-3 h-3 bg-primary rounded-full hidden md:block border-4 border-background"></div>
+<div class="bg-surface-container-high border-2 border-primary/20 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row">
+<div class="w-1 bg-primary"></div>
+<div class="p-6 flex-1 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-1">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Asset Identity</span>
+<p class="font-bold text-primary text-lg">GENESIS BLOCK</p>
+<p class="text-xs text-secondary font-mono mt-1">SYSTEM STARTUP</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Action</span>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="key">key</span>
+<span>ENCRYPTED</span>
+</div>
+<p class="text-xs text-secondary mt-1">00:00:01 UTC</p>
+</div>
+<div>
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Authorized User</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center text-[10px] font-bold">ADM</div>
+<span class="text-sm font-bold">ROOT SYSTEM</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-3 rounded">
+<span class="text-[10px] uppercase font-bold text-secondary tracking-widest block mb-1">Genesis Hash</span>
+<p class="text-[10px] font-mono break-all leading-tight text-primary">0000000000000000000000000000000000000000000000000000000000000000</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accountability Legend / Footer Tray -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container p-6 rounded-lg border-b-4 border-outline-variant">
+<h4 class="font-['Work_Sans'] font-black uppercase text-xs tracking-widest text-secondary mb-4">Neural Node Status</h4>
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium">Node 01 (Arlington)</span>
+<span class="w-2 h-2 rounded-full bg-[#2F7A4D]"></span>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium">Node 02 (Frankfurt)</span>
+<span class="w-2 h-2 rounded-full bg-[#2F7A4D]"></span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Node 03 (Singapore)</span>
+<span class="w-2 h-2 rounded-full bg-[#2F7A4D]"></span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-lg border-b-4 border-outline-variant md:col-span-2">
+<h4 class="font-['Work_Sans'] font-black uppercase text-xs tracking-widest text-secondary mb-4">Chain Metadata</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Block Count</p>
+<p class="text-xl font-black text-primary">42,901</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Avg. Mine Time</p>
+<p class="text-xl font-black text-primary">0.42s</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Current Difficulty</p>
+<p class="text-xl font-black text-primary">8.4P</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Chain Size</p>
+<p class="text-xl font-black text-primary">1.2 TB</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Action Button (FAB) - Suppression Logic Applied: Suppressed on Details/Audit screens but shown if active command needed -->
+<!-- Not rendered as per instructions for Details/Focused pages -->
+</body></html>

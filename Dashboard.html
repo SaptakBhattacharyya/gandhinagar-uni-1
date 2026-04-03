@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SENTINELCHAIN | Command Deck</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&amp;family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#73796f",
+                      "on-primary-container": "#c7f0bb",
+                      "surface-container-highest": "#e6e2d7",
+                      "on-surface": "#1c1c15",
+                      "inverse-primary": "#a9d19e",
+                      "surface-container": "#f2eee3",
+                      "surface-container-high": "#ece8dd",
+                      "primary-container": "#4b6f44",
+                      "on-background": "#1c1c15",
+                      "on-tertiary-fixed": "#311300",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#43673d",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f7f3e8",
+                      "inverse-surface": "#323129",
+                      "on-secondary-container": "#5f636a",
+                      "secondary": "#5a5f65",
+                      "surface-variant": "#e6e2d7",
+                      "on-tertiary-container": "#ffdfcd",
+                      "background": "#fdf9ee",
+                      "secondary-fixed": "#dfe2ea",
+                      "on-primary-fixed-variant": "#2c4f27",
+                      "on-secondary-fixed": "#181c22",
+                      "surface-bright": "#fdf9ee",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#42483f",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#c3c6ce",
+                      "on-secondary-fixed-variant": "#43474d",
+                      "inverse-on-surface": "#f4f0e6",
+                      "primary-fixed-dim": "#a9d19e",
+                      "on-tertiary-fixed-variant": "#743500",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#34562e",
+                      "tertiary": "#7f3b00",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb689",
+                      "secondary-container": "#dce0e8",
+                      "on-primary-fixed": "#012202",
+                      "surface-dim": "#dddacf",
+                      "surface": "#fdf9ee",
+                      "outline-variant": "#c2c8bc",
+                      "tertiary-container": "#a44e00",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#c4eeb8",
+                      "tertiary-fixed": "#ffdbc8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Work Sans"],
+                      "body": ["Public Sans"],
+                      "label": ["Public Sans"]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #fdf9ee; color: #1c1c15; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tactile-glass { backdrop-filter: blur(20px); background-color: rgba(253, 249, 238, 0.85); }
+        .headline-font { font-family: 'Work Sans', sans-serif; }
+      </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r-4 bg-[#f2eee3] dark:bg-[#1c1c15] border-r-[#e5e1d5] dark:border-r-[#2c2c24] z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white" data-icon="shield">shield</span>
+</div>
+<div>
+<h2 class="headline-font font-black tracking-tighter text-xl text-primary leading-none">Unit 01</h2>
+<p class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px] text-secondary">Sector 7G</p>
+</div>
+</div>
+<nav class="space-y-1">
+<!-- Command Deck is active -->
+<a class="flex items-center gap-3 bg-[#4b6f44] text-white font-bold px-4 py-3 border-l-4 border-[#34562e] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Command Deck</span>
+</a>
+<a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Tactical Map</span>
+</a>
+<a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Audit Chain</span>
+</a>
+<a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Anomaly HUD</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 space-y-6">
+<button class="w-full bg-primary text-white headline-font font-bold tracking-widest text-xs py-4 rounded-lg hover:bg-primary-container transition-colors">
+                DEPLOY COMMAND
+            </button>
+<div class="space-y-2 border-t border-[#e5e1d5] pt-4">
+<a class="flex items-center gap-3 text-[#5a5f65] px-2 py-1 text-xs font-bold uppercase tracking-tighter" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span> Security
+                </a>
+<a class="flex items-center gap-3 text-[#5a5f65] px-2 py-1 text-xs font-bold uppercase tracking-tighter" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span> Logs
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<main class="flex-1 md:ml-64 flex flex-col">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fdf9ee] dark:bg-[#1c1c15] border-b-2 border-b-[#f2eee3] dark:border-b-[#2c2c24] sticky top-0 z-40">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-black tracking-tighter text-[#34562e] dark:text-[#8da886] headline-font">SENTINELCHAIN</h1>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#34562e] border-b-4 border-[#34562e] pb-1 font-['Work_Sans'] font-bold tracking-tight uppercase text-sm" href="#">Command Deck</a>
+<a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="#">Tactical Map</a>
+<a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="#">Audit Chain</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-on-primary-container rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">98% System Health</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-secondary hover:bg-[#f2eee3] rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-secondary hover:bg-[#f2eee3] rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Commander Profile" class="w-10 h-10 rounded border-2 border-primary-container p-0.5 object-cover" data-alt="close-up portrait of a stern military officer in uniform with focused expression and tactical gear in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4iKr1IJyhe2KLKPQlgI4gzRQfYg2ZVjiPaC_FoWYUGSap6VIFKZd--2w-UGP9fJS0XPX-NvqW60nGU4YFoSZRVQgBY_-FN6RCrFOiJ1L79PO4lbVYG2EpNUkhhE6DGG-KCznk_xBjbcOhjn-LXD-ofRK6AnDDLw3RtcTPhvbq0gryeJtr7AfbYQcUY8_dg7Lta-5Z8cHaj_J4FHGDrB3FLhn1UaXrAf6W2ftT2trP4w7RHIJuwtJqbyALM4ra2Mvj0QYDVWEiRyto"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-6 lg:p-10 space-y-8">
+<!-- Hero Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 border-l-4 border-primary">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Total Assets</p>
+<h3 class="headline-font text-4xl font-black text-on-surface">1,284</h3>
+<div class="mt-4 flex items-center text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span> 12 New Today
+                    </div>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-4 border-tertiary">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Active Alerts</p>
+<h3 class="headline-font text-4xl font-black text-on-surface">03</h3>
+<div class="mt-4 flex items-center text-tertiary text-xs font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="warning">warning</span> Requires Review
+                    </div>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-4 border-error">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Missing Units</p>
+<h3 class="headline-font text-4xl font-black text-on-surface">01</h3>
+<div class="mt-4 flex items-center text-error text-xs font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="report">report</span> High Priority
+                    </div>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-4 border-secondary">
+<p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-1">Nodes Online</p>
+<h3 class="headline-font text-4xl font-black text-on-surface">94</h3>
+<div class="mt-4 flex items-center text-secondary text-xs font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="check_circle">check_circle</span> All Chains Synced
+                    </div>
+</div>
+</div>
+<!-- Bento Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Main Table Section (8/12) -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="headline-font text-2xl font-extrabold tracking-tight text-primary">REAL-TIME ASSET STATUS</h2>
+<p class="text-sm text-secondary font-medium">Monitoring fleet and tactical equipment via Sentinel Protocol.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-white border-2 border-primary text-primary px-4 py-2 text-xs font-bold rounded uppercase tracking-wider hover:bg-surface-container-low transition-colors">
+                                Simulate Missing Asset
+                            </button>
+<button class="bg-secondary text-white px-4 py-2 text-xs font-bold rounded uppercase tracking-wider hover:bg-on-surface transition-colors">
+                                Go Offline
+                            </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-secondary">Asset ID</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-secondary">Status</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-secondary">Location</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-secondary">Assigned To</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-secondary text-right">Risk Score</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5 font-mono text-sm font-bold text-primary">EQ-0001</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#2F7A4D]/10 text-[#2F7A4D]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F7A4D]"></span> Normal
+                                        </div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface">Base Alpha</td>
+<td class="px-6 py-5 text-sm font-semibold">Officer Singh</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">02</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5 font-mono text-sm font-bold text-primary">EQ-0042</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#E07A2F]/10 text-[#E07A2F]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E07A2F]"></span> Suspicious
+                                        </div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface">Sector 7</td>
+<td class="px-6 py-5 text-sm font-semibold">Soldier Kumar</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-tertiary">48</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5 font-mono text-sm font-bold text-primary">EQ-0119</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#B23A3A]/10 text-[#B23A3A]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B23A3A]"></span> Critical
+                                        </div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface">North Perimeter</td>
+<td class="px-6 py-5 text-sm font-semibold italic text-secondary">Unassigned</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-error">92</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5 font-mono text-sm font-bold text-primary">EQ-0087</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#2F7A4D]/10 text-[#2F7A4D]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F7A4D]"></span> Normal
+                                        </div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface">Base Alpha</td>
+<td class="px-6 py-5 text-sm font-semibold">Officer Singh</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">05</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-5 font-mono text-sm font-bold text-primary">EQ-0031</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-[#2F7A4D]/10 text-[#2F7A4D]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F7A4D]"></span> Normal
+                                        </div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface">Sector 7</td>
+<td class="px-6 py-5 text-sm font-semibold">Soldier Kumar</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container-high p-4 rounded flex justify-between items-center">
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#2F7A4D]"></span>
+<span class="text-[10px] font-bold uppercase text-secondary">Safe Zone</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#E07A2F]"></span>
+<span class="text-[10px] font-bold uppercase text-secondary">Warning Zone</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#B23A3A]"></span>
+<span class="text-[10px] font-bold uppercase text-secondary">Breach Zone</span>
+</div>
+</div>
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest">
+                            Showing 5 of 1,284 Records
+                        </div>
+</div>
+</div>
+<!-- Activity Feed Section (4/12) -->
+<div class="lg:col-span-4 bg-surface-container p-6 rounded border-t-8 border-primary-container min-h-[600px] flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<h3 class="headline-font font-black uppercase tracking-tighter text-lg text-primary">LIVE ACTIVITY FEED</h3>
+<span class="material-symbols-outlined text-secondary animate-spin" data-icon="sync" style="font-size: 18px;">sync</span>
+</div>
+<div class="space-y-8 relative">
+<!-- Timeline line -->
+<div class="absolute left-3 top-2 bottom-0 w-0.5 bg-outline-variant opacity-30"></div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#B23A3A] flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<p class="text-xs text-secondary font-bold uppercase tracking-wider mb-1">14:02:45 — ALERT</p>
+<h4 class="text-sm font-bold text-on-surface">BREACH: EQ-0119 North Perimeter</h4>
+<p class="text-xs text-secondary mt-1 leading-relaxed">Asset signal lost for 45s. Unit last tracked moving towards restricted zone Delta.</p>
+</div>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#E07A2F] flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs" data-icon="location_searching">location_searching</span>
+</div>
+<div>
+<p class="text-xs text-secondary font-bold uppercase tracking-wider mb-1">13:58:12 — WARNING</p>
+<h4 class="text-sm font-bold text-on-surface">GEOFENCE WARN: EQ-0042</h4>
+<p class="text-xs text-secondary mt-1 leading-relaxed">Soldier Kumar approaching secondary containment boundary.</p>
+</div>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<p class="text-xs text-secondary font-bold uppercase tracking-wider mb-1">13:45:00 — SYSTEM</p>
+<h4 class="text-sm font-bold text-on-surface">BLOCKCHAIN SYNC COMPLETE</h4>
+<p class="text-xs text-secondary mt-1 leading-relaxed">2,412 ledger entries verified across 56 decentralized nodes.</p>
+</div>
+</div>
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-xs text-secondary font-bold uppercase tracking-wider mb-1">13:30:10 — USER</p>
+<h4 class="text-sm font-bold text-on-surface">Officer Singh Login</h4>
+<p class="text-xs text-secondary mt-1 leading-relaxed">Access granted at Command Unit Alpha. Bio-metrics verified.</p>
+</div>
+</div>
+</div>
+<button class="mt-auto w-full py-4 headline-font text-[10px] font-black uppercase tracking-[0.2em] text-secondary border-2 border-outline-variant hover:bg-surface-container-highest transition-all">
+                        View Audit Log
+                    </button>
+</div>
+</div>
+<!-- Contextual Map / Visualization Placeholder -->
+<div class="bg-surface-container-highest h-64 rounded-xl flex items-center justify-center relative overflow-hidden group">
+<img alt="Tactical Terrain Map" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale contrast-125" data-alt="aerial satellite view of a rugged desert terrain with highlighted military tactical grids and glowing points of interest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8S8pc3VszslbA0a5ML8C2-YXi2vk2Y9Me3FfQkGI120klIr8fGNGKgB1EM-45wDTODz7DeRQLJQkpCyE_oxgXnQIOBWAq27Pq7KoWdUxui58yMusCcvhCHHdmnSTfNaWWZkntiClps7EGS83OMfRAQJzCrWXCzVcU0y_5XVxPFPwv3e3VF9NB5hQO_0QauSRA8K47tAoHICK9srmV_IYxRG3onRyp1tx2zN-E2kSCjYjDbsdrUlUbW268cd_aNnePLPx9bTtfUqoA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#f2eee3] to-transparent opacity-80"></div>
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-2" data-icon="map">map</span>
+<h4 class="headline-font font-black text-primary tracking-widest">TACTICAL GRID OVERLAY ACTIVE</h4>
+<p class="text-xs font-bold text-secondary uppercase tracking-[0.3em]">Sector 7G — Real-Time Mesh</p>
+</div>
+<div class="absolute top-4 right-4 bg-white px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="text-[10px] font-bold text-on-surface">LIVE FEED</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile BottomNavBar (Visible only on small screens) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#fdf9ee] border-t-4 border-t-primary-container z-50 flex justify-around items-center p-4">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[9px] font-bold uppercase">Deck</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[9px] font-bold uppercase">Map</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="text-[9px] font-bold uppercase">Audit</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[9px] font-bold uppercase">Config</span>
+</button>
+</nav>
+</body></html>

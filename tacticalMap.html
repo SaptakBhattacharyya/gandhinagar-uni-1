@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;800;900&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#73796f",
+                      "on-primary-container": "#c7f0bb",
+                      "surface-container-highest": "#e6e2d7",
+                      "on-surface": "#1c1c15",
+                      "inverse-primary": "#a9d19e",
+                      "surface-container": "#f2eee3",
+                      "surface-container-high": "#ece8dd",
+                      "primary-container": "#4b6f44",
+                      "on-background": "#1c1c15",
+                      "on-tertiary-fixed": "#311300",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#43673d",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f7f3e8",
+                      "inverse-surface": "#323129",
+                      "on-secondary-container": "#5f636a",
+                      "secondary": "#5a5f65",
+                      "surface-variant": "#e6e2d7",
+                      "on-tertiary-container": "#ffdfcd",
+                      "background": "#fdf9ee",
+                      "secondary-fixed": "#dfe2ea",
+                      "on-primary-fixed-variant": "#2c4f27",
+                      "on-secondary-fixed": "#181c22",
+                      "surface-bright": "#fdf9ee",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#42483f",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#c3c6ce",
+                      "on-secondary-fixed-variant": "#43474d",
+                      "inverse-on-surface": "#f4f0e6",
+                      "primary-fixed-dim": "#a9d19e",
+                      "on-tertiary-fixed-variant": "#743500",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#34562e",
+                      "tertiary": "#7f3b00",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#ffb689",
+                      "secondary-container": "#dce0e8",
+                      "on-primary-fixed": "#012202",
+                      "surface-dim": "#dddacf",
+                      "surface": "#fdf9ee",
+                      "outline-variant": "#c2c8bc",
+                      "tertiary-container": "#a44e00",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#c4eeb8",
+                      "tertiary-fixed": "#ffdbc8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Work Sans"],
+                      "body": ["Public Sans"],
+                      "label": ["Public Sans"]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Work Sans', sans-serif; }
+      </style>
+</head>
+<body class="bg-background text-on-background overflow-hidden h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fdf9ee] dark:bg-[#1c1c15] docked border-b-2 border-b-[#f2eee3] dark:border-b-[#2c2c24] z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-[#34562e] dark:text-[#8da886]">SENTINELCHAIN</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Command Deck</a>
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#34562e] border-b-4 border-[#34562e] pb-1" href="#">Tactical Map</a>
+<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Audit Chain</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-primary-container px-3 py-1 rounded text-white text-xs font-bold tracking-widest">
+                98% SYSTEM HEALTH
+            </div>
+<button class="material-symbols-outlined text-secondary hover:bg-[#f2eee3] p-2 transition-colors">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:bg-[#f2eee3] p-2 transition-colors">settings</button>
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Commander Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a high-ranking military commander in professional tactical gear with focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlIJAisTniz-gmDDY9kx3FQ25dhGtg-Az7miziFQK08IvXhDIdQbF5uByicdz9iTDTfQ8fZiJRPYGVI_CMU5dczBqaA6wk4_eDkuuTS2lhSxGJRdurR8ssB8b4mOcT57aDh6XToDIPY0RQ3k3bWR_rAb6ZT7xaHvOJinLpxDHdS2G1bdUC7Q2E_Lwd-22ZaCSVohaueXsAfwRF1xWXgWdEzFdTULS2I7FVnCbybFX5V-PZn858eniJ3P6r85PqIYg2q_pRq2WkZOx"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full border-r border-[#e5e1d5] bg-[#f2eee3] dark:bg-[#1c1c15] w-64 fixed left-0 top-0 pt-20 z-40">
+<div class="px-6 py-8 flex flex-col gap-1">
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px] text-secondary">Operational Unit</span>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-sm bg-primary-container flex items-center justify-center text-white text-xs font-bold">U1</div>
+<div>
+<div class="font-bold text-sm text-primary uppercase tracking-tight">Unit 01</div>
+<div class="text-[10px] text-secondary font-medium tracking-widest uppercase">Sector 7G</div>
+</div>
+</div>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Command Deck</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-[#34562e] bg-[#4b6f44] text-white font-bold transition-all duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Tactical Map</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Audit Chain</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Anomaly HUD</span>
+</a>
+</nav>
+<div class="p-4">
+<button class="w-full py-3 bg-primary text-white text-[10px] font-black tracking-widest uppercase rounded hover:bg-primary-container transition-colors shadow-sm">
+                    DEPLOY COMMAND
+                </button>
+</div>
+<div class="mt-auto border-t border-outline-variant/30 flex flex-col py-2">
+<a class="flex items-center gap-4 px-4 py-3 text-secondary hover:bg-[#e5e1d5] transition-all" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px]">Security</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-secondary hover:bg-[#e5e1d5] transition-all" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px]">Logs</span>
+</a>
+</div>
+</aside>
+<!-- Main Content (Map Interface) -->
+<main class="flex-1 ml-64 relative bg-[#f2eee3]">
+<!-- Map Background Layer -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply filter grayscale-[30%]" data-alt="top-down high-contrast topographical map view of warm sand desert terrain with subtle elevation lines and tactical grid overlay" data-location="Mojave Desert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBklEo__s_ImfZivqdmQvnx3Hx3hkrQmuFlL5v2dHh-malV-bx4gyvY_E628ubnbtMGQlDhF9giUGpL2Xsib933iwWjhbZSXk_N2HEuxuzD3n-OQVrZKDGXWU8zMVYMIoediBYAcwArzcrsWg_qVYv9ge_tHJHNPYPML5BnLsF_26OBtlzUJbODWZCINPiTzTYFo2BqZ2Q2ATrxvvhgecGaUDKZCnlfxERclNOYDxNqMeJzhAhlm0XsvtwXjXYPP_-lNixSQi4AVeEF"/>
+<!-- Grid Overlay -->
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10 pointer-events-none"></div>
+</div>
+<!-- UI Overlay: Tactical Data Chips -->
+<div class="absolute top-6 left-6 z-20 flex flex-col gap-4">
+<div class="bg-surface/90 backdrop-blur-md p-4 rounded-lg shadow-sm border-l-4 border-primary max-w-xs">
+<div class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Regional Status</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-black text-primary leading-none">SECTOR-07</span>
+<span class="text-xs font-bold text-primary-container mb-1 tracking-tighter">STABLE</span>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface/90 backdrop-blur-md px-3 py-2 rounded flex items-center gap-2 border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-bold text-on-surface uppercase tracking-tighter">Active Assets: 142</span>
+</div>
+<div class="bg-surface/90 backdrop-blur-md px-3 py-2 rounded flex items-center gap-2 border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="text-[10px] font-bold text-error uppercase tracking-tighter">Alerts: 03</span>
+</div>
+</div>
+</div>
+<!-- Simulated Map Markers -->
+<!-- Safe Asset 1 -->
+<div class="absolute top-[25%] left-[35%] z-10 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-8 h-8 rounded-full border-2 border-[#2F7A4D] animate-ping opacity-30"></div>
+<div class="w-4 h-4 bg-[#2F7A4D] rounded-sm transform rotate-45 border border-white shadow-md"></div>
+</div>
+<div class="absolute top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-on-surface text-white text-[10px] px-2 py-1 rounded font-bold tracking-widest">
+                    ASSET_ALPHA_9
+                </div>
+</div>
+<!-- Anomaly Asset -->
+<div class="absolute top-[45%] left-[60%] z-10 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 rounded-full border-4 border-[#B23A3A] animate-pulse opacity-50"></div>
+<div class="w-6 h-6 bg-[#B23A3A] rounded-sm transform rotate-45 flex items-center justify-center border-2 border-white shadow-xl">
+<span class="material-symbols-outlined text-white text-[14px]">warning</span>
+</div>
+</div>
+<div class="absolute top-8 left-1/2 -translate-x-1/2 bg-error text-white text-[10px] px-2 py-1 rounded font-black tracking-widest shadow-lg">
+                    ANOMALY_DET_77
+                </div>
+</div>
+<!-- Safe Asset 2 -->
+<div class="absolute top-[70%] left-[20%] z-10 group cursor-pointer">
+<div class="w-4 h-4 bg-[#2F7A4D] rounded-sm transform rotate-45 border border-white shadow-md"></div>
+</div>
+<!-- Right Selection Sidebar -->
+<aside class="absolute top-0 right-0 h-full w-80 bg-surface/85 backdrop-blur-xl border-l border-outline-variant/30 z-30 flex flex-col p-6 overflow-y-auto">
+<div class="mb-8">
+<span class="font-['Work_Sans'] font-bold text-[10px] tracking-widest text-secondary uppercase block mb-1">Asset Inspector</span>
+<h2 class="text-2xl font-black text-primary tracking-tighter uppercase leading-tight">ANOMALY_DET_77</h2>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 bg-error-container text-on-error-container text-[10px] font-bold rounded">HIGH RISK</span>
+<span class="text-[10px] text-secondary font-medium tracking-widest uppercase">Grid: 12.34 / 88.01</span>
+</div>
+</div>
+<div class="space-y-6 flex-1">
+<!-- Data Strip -->
+<div class="bg-surface-container p-4 rounded-lg border-b-2 border-error">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-2">Telemetry Analysis</span>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-xs font-medium text-secondary block">Risk Score</span>
+<span class="text-4xl font-black text-error leading-none">88.4%</span>
+</div>
+<div class="text-right">
+<span class="text-xs font-medium text-secondary block">Confidence</span>
+<span class="text-lg font-bold text-primary">0.992</span>
+</div>
+</div>
+</div>
+<!-- Details Table -->
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Last Activity</span>
+<span class="text-[11px] font-bold text-on-surface">1.2s AGO</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Protocol Status</span>
+<span class="text-[11px] font-bold text-on-surface">SUSPENDED</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Deployment Type</span>
+<span class="text-[11px] font-bold text-on-surface">TACTICAL_NODE</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Assigned Unit</span>
+<span class="text-[11px] font-bold text-on-surface">SIGMA-04</span>
+</div>
+</div>
+<!-- Mini Map or visual confirmation -->
+<div class="rounded-lg overflow-hidden border border-outline-variant/30 h-32 relative group">
+<img class="w-full h-full object-cover" data-alt="infrared satellite view of rocky terrain with thermal hotspots highlighted in red and green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtUaDc6Ot_Oa5en6Gp0nG3DQSDw4FlBHgfPxYbPuHeAH9MyEX1662nlbG6uPtWSn_newqd-OX8QxBC0liV5hS8qCoUanXMMitGPjndnA1FUdhNzL28MrAS9cnmTl41MhSQnZShDyyCQKgwY37YthYvIkY-ApAd8MLLh5xvTPwc918RI-7sMjpDXTt4yocHCtUy9fHAv3IAy5BpvvzIPJFQ6UAYk19_fcMua5MjbgrxIyiRoJYXfsi1MLMaAKC522jSR_ZHC7XMMGdz"/>
+<div class="absolute inset-0 bg-error/20 mix-blend-overlay"></div>
+<div class="absolute bottom-2 left-2 bg-on-surface/90 text-white text-[8px] font-bold p-1 rounded">INFRARED_CONFIRMATION_003</div>
+</div>
+</div>
+<div class="mt-8 flex flex-col gap-3">
+<button class="w-full py-4 bg-error text-white font-black tracking-widest uppercase text-xs rounded shadow-lg hover:brightness-110 active:scale-[0.98] transition-all">
+                        INITIALIZE LOCKDOWN
+                    </button>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container font-bold tracking-widest uppercase text-[10px] rounded hover:bg-outline-variant transition-colors">
+                        RE-ESTABLISH HANDSHAKE
+                    </button>
+</div>
+</aside>
+<!-- Map Controls (Bottom Center) -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-surface/90 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-outline-variant/30 flex gap-1">
+<button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">add</span></button>
+<button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">remove</span></button>
+<div class="w-px h-6 bg-outline-variant self-center mx-1"></div>
+<button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">layers</span></button>
+<button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">my_location</span></button>
+</div>
+</main>
+</div>
+</body></html>
