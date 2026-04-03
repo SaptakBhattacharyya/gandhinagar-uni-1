@@ -84,77 +84,88 @@
         h1, h2, h3, .headline { font-family: 'Work Sans', sans-serif; }
       </style>
 </head>
-<body class="bg-background text-on-background overflow-hidden h-screen flex flex-col">
-<!-- TopNavBar -->
-<header class="flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fdf9ee] dark:bg-[#1c1c15] docked border-b-2 border-b-[#f2eee3] dark:border-b-[#2c2c24] z-50">
-<div class="flex items-center gap-8">
-<span class="text-2xl font-black tracking-tighter text-[#34562e] dark:text-[#8da886]">SENTINELCHAIN</span>
-<nav class="hidden md:flex gap-6 items-center">
-<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Command Deck</a>
-<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#34562e] border-b-4 border-[#34562e] pb-1" href="#">Tactical Map</a>
-<a class="font-['Work_Sans'] font-bold tracking-tight uppercase text-[#5a5f65] hover:text-[#34562e] transition-colors" href="#">Audit Chain</a>
-</nav>
+<body class="bg-background text-on-background overflow-hidden h-screen flex">
+
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r-4 bg-[#f2eee3] dark:bg-[#1c1c15] border-r-[#e5e1d5] dark:border-r-[#2c2c24] z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white" data-icon="shield">shield</span>
 </div>
-<div class="flex items-center gap-4">
-<div class="bg-primary-container px-3 py-1 rounded text-white text-xs font-bold tracking-widest">
-                98% SYSTEM HEALTH
-            </div>
-<button class="material-symbols-outlined text-secondary hover:bg-[#f2eee3] p-2 transition-colors">notifications</button>
-<button class="material-symbols-outlined text-secondary hover:bg-[#f2eee3] p-2 transition-colors">settings</button>
-<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant">
-<img alt="Commander Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a high-ranking military commander in professional tactical gear with focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlIJAisTniz-gmDDY9kx3FQ25dhGtg-Az7miziFQK08IvXhDIdQbF5uByicdz9iTDTfQ8fZiJRPYGVI_CMU5dczBqaA6wk4_eDkuuTS2lhSxGJRdurR8ssB8b4mOcT57aDh6XToDIPY0RQ3k3bWR_rAb6ZT7xaHvOJinLpxDHdS2G1bdUC7Q2E_Lwd-22ZaCSVohaueXsAfwRF1xWXgWdEzFdTULS2I7FVnCbybFX5V-PZn858eniJ3P6r85PqIYg2q_pRq2WkZOx"/>
-</div>
-</div>
-</header>
-<div class="flex flex-1 overflow-hidden relative">
-<!-- SideNavBar -->
-<aside class="flex flex-col h-full border-r border-[#e5e1d5] bg-[#f2eee3] dark:bg-[#1c1c15] w-64 fixed left-0 top-0 pt-20 z-40">
-<div class="px-6 py-8 flex flex-col gap-1">
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px] text-secondary">Operational Unit</span>
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-sm bg-primary-container flex items-center justify-center text-white text-xs font-bold">U1</div>
 <div>
-<div class="font-bold text-sm text-primary uppercase tracking-tight">Unit 01</div>
-<div class="text-[10px] text-secondary font-medium tracking-widest uppercase">Sector 7G</div>
+<h2 class="headline-font font-black tracking-tighter text-xl text-primary leading-none">Unit 01</h2>
+<p class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px] text-secondary">Sector 7G</p>
 </div>
 </div>
-</div>
-<nav class="flex flex-col flex-1">
-<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Command Deck</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-[#34562e] bg-[#4b6f44] text-white font-bold transition-all duration-200" href="#">
-<span class="material-symbols-outlined">map</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Tactical Map</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
-<span class="material-symbols-outlined">history_edu</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Audit Chain</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 border-l-4 border-transparent text-[#5a5f65] hover:bg-[#e5e1d5] transition-all duration-200" href="#">
-<span class="material-symbols-outlined">query_stats</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Anomaly HUD</span>
-</a>
+<nav class="space-y-1">
+        <a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="Dashboard.html">
+          <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+          <span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Command Deck</span>
+        </a>
+        <a class="flex items-center gap-3 bg-[#4b6f44] text-white font-bold px-4 py-3 border-l-4 border-[#34562e] transition-all duration-200 ease-in-out" href="tacticalMap.html">
+          <span class="material-symbols-outlined" data-icon="map">map</span>
+          <span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Tactical Map</span>
+        </a>
+        <a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="AuditLog.html">
+          <span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+          <span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Audit Chain</span>
+        </a>
+        <a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="AssetSovereigntyView.html">
+          <span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+          <span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Inventory</span>
+        </a>
+        <a class="flex items-center gap-3 text-[#5a5f65] px-4 py-3 border-l-4 border-transparent hover:bg-[#e5e1d5] dark:hover:bg-[#2c2c24] transition-all duration-200 ease-in-out" href="anolomyHub.html">
+          <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+          <span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-xs">Anomaly HUD</span>
+        </a>
 </nav>
-<div class="p-4">
-<button class="w-full py-3 bg-primary text-white text-[10px] font-black tracking-widest uppercase rounded hover:bg-primary-container transition-colors shadow-sm">
-                    DEPLOY COMMAND
-                </button>
 </div>
-<div class="mt-auto border-t border-outline-variant/30 flex flex-col py-2">
-<a class="flex items-center gap-4 px-4 py-3 text-secondary hover:bg-[#e5e1d5] transition-all" href="#">
-<span class="material-symbols-outlined">shield</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px]">Security</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 text-secondary hover:bg-[#e5e1d5] transition-all" href="#">
-<span class="material-symbols-outlined">terminal</span>
-<span class="font-['Work_Sans'] font-medium uppercase tracking-widest text-[10px]">Logs</span>
-</a>
+<div class="mt-auto p-6 space-y-6">
+<button class="w-full bg-primary text-white headline-font font-bold tracking-widest text-xs py-4 rounded-lg hover:bg-primary-container transition-colors">
+                DEPLOY COMMAND
+            </button>
+<div class="space-y-2 border-t border-[#e5e1d5] pt-4">
+<a class="flex items-center gap-3 text-[#5a5f65] px-2 py-1 text-xs font-bold uppercase tracking-tighter" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span> Security
+                </a>
+<a class="flex items-center gap-3 text-[#5a5f65] px-2 py-1 text-xs font-bold uppercase tracking-tighter" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span> Logs
+                </a>
+</div>
 </div>
 </aside>
 <!-- Main Content (Map Interface) -->
-<main class="flex-1 ml-64 relative bg-[#f2eee3]">
+<main class="flex-1 md:ml-64 flex flex-col relative bg-[#f2eee3]">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fdf9ee] dark:bg-[#1c1c15] border-b-2 border-b-[#f2eee3] dark:border-b-[#2c2c24] sticky top-0 z-40">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-black tracking-tighter text-[#34562e] dark:text-[#8da886] headline-font">SENTINELCHAIN</h1>
+            <nav class="hidden lg:flex items-center gap-6">
+              <a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="Dashboard.html">Command Deck</a>
+              <a class="text-[#34562e] border-b-4 border-[#34562e] pb-1 font-['Work_Sans'] font-bold tracking-tight uppercase text-sm" href="tacticalMap.html">Tactical Map</a>
+              <a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="AuditLog.html">Audit Chain</a>
+              <a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="AssetSovereigntyView.html">Inventory</a>
+              <a class="text-[#5a5f65] hover:text-[#34562e] font-['Work_Sans'] font-bold tracking-tight uppercase text-sm transition-colors" href="anolomyHub.html">Anomaly HUD</a>
+            </nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-on-primary-container rounded-full">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">98% System Health</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-secondary hover:bg-[#f2eee3] rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-secondary hover:bg-[#f2eee3] rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Commander Profile" class="w-10 h-10 rounded border-2 border-primary-container p-0.5 object-cover" data-alt="close-up portrait of a high-ranking military commander in professional tactical gear with focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlIJAisTniz-gmDDY9kx3FQ25dhGtg-Az7miziFQK08IvXhDIdQbF5uByicdz9iTDTfQ8fZiJRPYGVI_CMU5dczBqaA6wk4_eDkuuTS2lhSxGJRdurR8ssB8b4mOcT57aDh6XToDIPY0RQ3k3bWR_rAb6ZT7xaHvOJinLpxDHdS2G1bdUC7Q2E_Lwd-22ZaCSVohaueXsAfwRF1xWXgWdEzFdTULS2I7FVnCbybFX5V-PZn858eniJ3P6r85PqIYg2q_pRq2WkZOx"/>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-hidden relative">
 <!-- Map Background Layer -->
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover opacity-60 mix-blend-multiply filter grayscale-[30%]" data-alt="top-down high-contrast topographical map view of warm sand desert terrain with subtle elevation lines and tactical grid overlay" data-location="Mojave Desert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBklEo__s_ImfZivqdmQvnx3Hx3hkrQmuFlL5v2dHh-malV-bx4gyvY_E628ubnbtMGQlDhF9giUGpL2Xsib933iwWjhbZSXk_N2HEuxuzD3n-OQVrZKDGXWU8zMVYMIoediBYAcwArzcrsWg_qVYv9ge_tHJHNPYPML5BnLsF_26OBtlzUJbODWZCINPiTzTYFo2BqZ2Q2ATrxvvhgecGaUDKZCnlfxERclNOYDxNqMeJzhAhlm0XsvtwXjXYPP_-lNixSQi4AVeEF"/>
@@ -276,6 +287,6 @@
 <button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">layers</span></button>
 <button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors rounded-full"><span class="material-symbols-outlined">my_location</span></button>
 </div>
-</main>
 </div>
+</main>
 </body></html>
